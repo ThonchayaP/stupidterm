@@ -4,77 +4,151 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Crying Raining & 33 Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Russo+One&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: "Poppins", "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, #f7f9fc, #e3e9f0);
-      color: #333;
       margin: 0;
-      padding: 0;
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      color: #f5f5f5;
+      min-height: 100vh;
+      background: radial-gradient(circle at 20% 20%, #1a1a2e, #0f0f1f 80%);
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      position: relative;
     }
+
+    /* Moving background light beams */
+    body::before, body::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 180deg, #00aaff33, #ff006633, #00ffaa33, #00aaff33);
+      animation: rotate 12s linear infinite;
+      z-index: 0;
+      filter: blur(100px);
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
     .container {
-      background: #ffffffcc;
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      padding: 40px 50px;
-      max-width: 600px;
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+      box-shadow: 0 0 40px rgba(0, 255, 200, 0.15);
+      padding: 50px 60px;
       text-align: center;
-      animation: fadeIn 1s ease;
+      max-width: 600px;
+      animation: fadeIn 1.2s ease-out;
     }
+
     h1 {
-      font-size: 1.8rem;
-      color: #2b2d42;
-      margin-bottom: 0.8em;
+      font-family: "Russo One", sans-serif;
+      font-size: 2rem;
+      color: #00d4ff;
+      margin-bottom: 1em;
+      text-shadow: 0 0 10px #00ffff88, 0 0 20px #0077ff55;
+      letter-spacing: 1px;
     }
+
     p {
       font-size: 1rem;
-      line-height: 1.6;
-      margin: 0.8em 0;
+      line-height: 1.8;
+      margin: 1.2em 0;
+      color: #e0e6ff;
     }
+
+    strong {
+      color: #ffffff;
+      text-shadow: 0 0 6px #00ccff55;
+    }
+
     a {
-      color: #0077cc;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    a:hover {
-      color: #005fa3;
-      text-decoration: underline;
-    }
-    .emoji {
-      font-size: 1.3rem;
-      margin-right: 4px;
-    }
-    footer {
-      font-size: 1rem;
-      color: #222;
+      color: #00d4ff;
       font-weight: 600;
-      margin-top: 1.8em;
-      letter-spacing: 0.3px;
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
+
+    a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 12px #00ffffcc;
+    }
+
+    .emoji {
+      font-size: 1.4rem;
+      margin-right: 5px;
+    }
+
+    footer {
+      margin-top: 2em;
+      font-weight: 700;
+      color: #ffffffcc;
+      font-size: 1rem;
+      letter-spacing: 0.4px;
+      text-shadow: 0 0 8px #00d4ff44;
+      animation: pulse 3s infinite ease-in-out;
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(25px);
       }
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.03); }
+    }
+
+    /* Floating glow particles */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: #00d4ff55;
+      pointer-events: none;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 0.6; }
+      50% { transform: translateY(-40px) scale(1.3); opacity: 1; }
+      100% { transform: translateY(0) scale(1); opacity: 0.6; }
+    }
+
   </style>
 </head>
 <body>
+  <div class="particle" style="width: 10px; height: 10px; top: 20%; left: 30%; animation-delay: 1s;"></div>
+  <div class="particle" style="width: 8px; height: 8px; top: 60%; left: 70%; animation-delay: 2s;"></div>
+  <div class="particle" style="width: 12px; height: 12px; top: 40%; left: 10%; animation-delay: 3s;"></div>
+  <div class="particle" style="width: 6px; height: 6px; top: 80%; left: 50%; animation-delay: 4s;"></div>
+
   <div class="container">
     <h1>🎵 Get in Touch with Us! 🎶</h1>
 
     <p>
       <span class="emoji">📩</span>
-      <strong>Contact me:</strong>
+      <strong>Contact me:</strong><br />
       <a href="mailto:thonchaya@outlook.com">thonchaya@outlook.com</a>
     </p>
 
@@ -91,7 +165,8 @@
     </p>
 
     <footer>
-      ⚡ Turn up the noise. Feel the rain. Crying Raining x 33 Studio 🎸
+      ⚡ Turn up the noise. Feel the rain. <br>
+      <span style="color:#00d4ff;">Crying Raining × 33 Studio</span> 🎸
     </footer>
   </div>
 </body>
