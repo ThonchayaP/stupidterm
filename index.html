@@ -3,105 +3,100 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Crying Raining & 33 Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Russo+One&display=swap" rel="stylesheet">
+  <title>Contact | Crying Raining x 33 Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: "Poppins", "Segoe UI", sans-serif;
-      color: #f5f5f5;
-      min-height: 100vh;
-      background: radial-gradient(circle at 20% 20%, #1a1a2e, #0f0f1f 80%);
-      overflow: hidden;
+      font-family: "Manrope", sans-serif;
+      background: linear-gradient(180deg, #e6dfd5, #d6c8b6);
+      color: #2e2a27;
       display: flex;
       justify-content: center;
       align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
       position: relative;
     }
 
-    /* Moving background light beams */
-    body::before, body::after {
+    /* subtle noise texture */
+    body::before {
       content: "";
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(from 180deg, #00aaff33, #ff006633, #00ffaa33, #00aaff33);
-      animation: rotate 12s linear infinite;
+      inset: 0;
+      background: url('https://www.transparenttextures.com/patterns/cream-pixels.png');
+      opacity: 0.3;
       z-index: 0;
-      filter: blur(100px);
-    }
-
-    @keyframes rotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
     }
 
     .container {
       position: relative;
-      z-index: 2;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 18px;
-      box-shadow: 0 0 40px rgba(0, 255, 200, 0.15);
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 14px;
+      border: 1.5px solid rgba(60, 50, 40, 0.3);
       padding: 50px 60px;
       text-align: center;
-      max-width: 600px;
-      animation: fadeIn 1.2s ease-out;
+      width: 90%;
+      max-width: 580px;
+      box-shadow: 0 8px 25px rgba(60, 40, 20, 0.15);
+      animation: fadeIn 1s ease;
     }
 
     h1 {
-      font-family: "Russo One", sans-serif;
-      font-size: 2rem;
-      color: #00d4ff;
-      margin-bottom: 1em;
-      text-shadow: 0 0 10px #00ffff88, 0 0 20px #0077ff55;
+      font-family: "Space Mono", monospace;
+      font-size: 1.8rem;
+      color: #2b1d15;
       letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 2px dashed rgba(60, 40, 20, 0.3);
+      display: inline-block;
+      padding-bottom: 8px;
+      margin-bottom: 1.2em;
+      text-shadow: 1px 1px 0 #d2b48c;
     }
 
     p {
       font-size: 1rem;
       line-height: 1.8;
-      margin: 1.2em 0;
-      color: #e0e6ff;
-    }
-
-    strong {
-      color: #ffffff;
-      text-shadow: 0 0 6px #00ccff55;
+      color: #3b322c;
+      margin: 1em 0;
     }
 
     a {
-      color: #00d4ff;
+      color: #6a4c2a;
       font-weight: 600;
       text-decoration: none;
+      border-bottom: 1px solid transparent;
       transition: all 0.3s ease;
     }
 
     a:hover {
-      color: #ffffff;
-      text-shadow: 0 0 12px #00ffffcc;
+      border-bottom: 1px solid #6a4c2a;
+      color: #2e2a27;
     }
 
     .emoji {
-      font-size: 1.4rem;
-      margin-right: 5px;
+      font-size: 1.3rem;
+      margin-right: 6px;
     }
 
     footer {
-      margin-top: 2em;
-      font-weight: 700;
-      color: #ffffffcc;
-      font-size: 1rem;
-      letter-spacing: 0.4px;
-      text-shadow: 0 0 8px #00d4ff44;
-      animation: pulse 3s infinite ease-in-out;
+      font-family: "Space Mono", monospace;
+      font-size: 0.95rem;
+      color: #4a3b2f;
+      margin-top: 2.2em;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      border-top: 1px dashed rgba(80, 60, 40, 0.4);
+      padding-top: 1em;
+      animation: flicker 3s infinite ease-in-out;
     }
 
     @keyframes fadeIn {
@@ -115,36 +110,36 @@
       }
     }
 
-    @keyframes pulse {
-      0%, 100% { opacity: 0.8; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.03); }
+    /* subtle punk flicker effect for footer */
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      97% { opacity: 0.85; }
+      98% { opacity: 0.6; }
+      99% { opacity: 0.95; }
     }
 
-    /* Floating glow particles */
-    .particle {
-      position: absolute;
-      border-radius: 50%;
-      background: #00d4ff55;
-      pointer-events: none;
-      animation: float 6s infinite ease-in-out;
+    /* “punk underline” motion */
+    h1::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 2px;
+      margin: 10px auto 0;
+      background: linear-gradient(90deg, #2b1d15, #6a4c2a);
+      animation: underlineSlide 3s infinite linear;
     }
 
-    @keyframes float {
-      0% { transform: translateY(0) scale(1); opacity: 0.6; }
-      50% { transform: translateY(-40px) scale(1.3); opacity: 1; }
-      100% { transform: translateY(0) scale(1); opacity: 0.6; }
+    @keyframes underlineSlide {
+      0% { transform: scaleX(0); opacity: 0.6; }
+      50% { transform: scaleX(1); opacity: 1; }
+      100% { transform: scaleX(0); opacity: 0.6; }
     }
 
   </style>
 </head>
 <body>
-  <div class="particle" style="width: 10px; height: 10px; top: 20%; left: 30%; animation-delay: 1s;"></div>
-  <div class="particle" style="width: 8px; height: 8px; top: 60%; left: 70%; animation-delay: 2s;"></div>
-  <div class="particle" style="width: 12px; height: 12px; top: 40%; left: 10%; animation-delay: 3s;"></div>
-  <div class="particle" style="width: 6px; height: 6px; top: 80%; left: 50%; animation-delay: 4s;"></div>
-
   <div class="container">
-    <h1>🎵 Get in Touch with Us! 🎶</h1>
+    <h1>Contact Us</h1>
 
     <p>
       <span class="emoji">📩</span>
@@ -165,8 +160,7 @@
     </p>
 
     <footer>
-      ⚡ Turn up the noise. Feel the rain. <br>
-      <span style="color:#00d4ff;">Crying Raining × 33 Studio</span> 🎸
+      ⚡ Crying Raining × 33 Studio — Minimal Noise. Maximum Soul.
     </footer>
   </div>
 </body>
