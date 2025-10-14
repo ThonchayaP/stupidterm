@@ -1,113 +1,102 @@
-<!doctype html>
-<html lang="th">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — Crying Raining & 33 Studio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Crying Raining & 33 Studio</title>
   <style>
-    :root{
-      --bg:#fff8ff;
-      --card:#fff;
-      --accent:#ff6fa3;
-      --muted:#666;
-      --radius:12px;
-      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    body {
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f7f9fc, #e3e9f0);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
-    body{
-      margin:0;
-      padding:32px;
-      background: linear-gradient(180deg,#fff8ff 0%, #fff 60%);
-      color:#222;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
+    .container {
+      background: #ffffffcc;
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px 50px;
+      max-width: 600px;
+      text-align: center;
+      animation: fadeIn 1s ease;
     }
-    .card{
-      width:100%;
-      max-width:640px;
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      padding:28px;
+    h1 {
+      font-size: 1.8rem;
+      color: #2b2d42;
+      margin-bottom: 0.8em;
     }
-    h1{ margin:0 0 6px 0; font-size:1.5rem; }
-    p.lead{ margin:0 0 18px 0; color:var(--muted); }
-    .contact-list{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
-    .item{
-      display:flex;
-      gap:12px;
-      align-items:start;
-      padding:12px;
-      border-radius:10px;
-      background: linear-gradient(180deg, rgba(255,111,159,0.06), rgba(255,255,255,0));
-      transition: transform .12s ease;
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0.8em 0;
     }
-    .item:hover{ transform: translateY(-4px); }
-    .emoji{
-      font-size:1.6rem;
-      line-height:1;
-      margin-top:2px;
+    a {
+      color: #0077cc;
+      text-decoration: none;
+      transition: color 0.2s ease;
     }
-    .meta{
-      display:flex;
-      flex-direction:column;
+    a:hover {
+      color: #005fa3;
+      text-decoration: underline;
     }
-    a{
-      color:var(--accent);
-      text-decoration:none;
-      word-break:break-all;
+    .emoji {
+      font-size: 1.3rem;
+      margin-right: 4px;
     }
-    .small{ color:var(--muted); font-size:0.95rem; margin-top:6px; }
-    footer{ margin-top:18px; color:var(--muted); font-size:0.9rem; text-align:center; }
-    @media (max-width:420px){
-      body{ padding:18px; }
-      .card{ padding:18px; }
+    .highlight {
+      color: #005fa3;
+      font-weight: 600;
+    }
+    footer {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1.8em;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 <body>
-  <main class="card" role="main" aria-labelledby="title">
-    <header>
-      <h1 id="title">ติดต่อ / Contact :love_letter:</h1>
-      <p class="lead">ติดต่อฉันและทีมงาน — ส่งข้อความมาได้เลยนะจ๊ะ :sparkles:</p>
-    </header>
-    <ul class="contact-list" role="list">
-      <li class="item" role="listitem">
-        <div class="emoji">:envelope_with_arrow:</div>
-        <div class="meta">
-          <strong>ติดต่อฉัน / Contact Me</strong>
-          <div class="small">
-            <a href="mailto:thonchaya@outlook.com">thonchaya@outlook.com</a>
-          </div>
-        </div>
-      </li>
-      <li class="item" role="listitem">
-        <div class="emoji">:musical_note:</div>
-        <div class="meta">
-          <strong>ติดต่อ Crying Raining / Contact Crying Raining</strong>
-          <div class="small">
-            <a href="https://linktr.ee/cryingraining?fbclid=PAVERFWANa_klleHRuA2FlbQIxMQABp569W2kidAsYd1uzE_tS8XfgOyjeKx_IU0Q__M4QIJC0ymIPUUEtuHfdbcHb_aem_wHwDGa0g1kMJAxvPPHj5rQ" target="_blank" rel="noopener noreferrer">
-              https://linktr.ee/cryingraining?fbclid=PAVERFWANa_klleHRuA2FlbQIxMQABp569W2kidAsYd1uzE_tS8XfgOyjeKx_IU0Q__M4QIJC0ymIPUUEtuHfdbcHb_aem_wHwDGa0g1kMJAxvPPHj5rQ
-            </a>
-          </div>
-        </div>
-      </li>
-      <li class="item" role="listitem">
-        <div class="emoji">:headphones:</div>
-        <div class="meta">
-          <strong>ติดต่อ 33 Studio / Contact 33 Studio</strong>
-          <div class="small">
-            <a href="https://linktr.ee/33studio.bkk?fbclid=PAZnRzaANa_1JleHRuA2FlbQIxMQABp_E56bpcqaW5UQsgVwqLwnz-rQgWDbyWyMxnX4fwF6A4Kd7W6SS1YWxNvhsA_aem_DsSRZfYIMxTHfs_q2gWddA" target="_blank" rel="noopener noreferrer">
-              https://linktr.ee/33studio.bkk?fbclid=PAZnRzaANa_1JleHRuA2FlbQIxMQABp_E56bpcqaW5UQsgVwqLwnz-rQgWDbyWyMxnX4fwF6A4Kd7W6SS1YWxNvhsA_aem_DsSRZfYIMxTHfs_q2gWddA
-            </a>
-          </div>
-        </div>
-      </li>
-    </ul>
+  <div class="container">
+    <h1>🎵 Get in Touch with Us! 🎶</h1>
+
+    <p>
+      <span class="emoji">📩</span>
+      <strong>Contact me:</strong>
+      <a href="mailto:thonchaya@outlook.com">thonchaya@outlook.com</a>
+    </p>
+
+    <p>
+      <span class="emoji">🎸</span>
+      <strong>Contact Crying Raining:</strong><br />
+      <a href="https://linktr.ee/cryingraining" target="_blank">https://linktr.ee/cryingraining</a>
+    </p>
+
+    <p>
+      <span class="emoji">🎧</span>
+      <strong>Contact 33 Studio:</strong><br />
+      <a href="https://linktr.ee/33studio.bkk" target="_blank">https://linktr.ee/33studio.bkk</a>
+    </p>
+
     <footer>
-      ขอบคุณที่ติดต่อนะคะ/ครับ :two_hearts: — Crying Raining
+      ✨ Whether you’re looking for heartfelt indie tunes from
+      <span class="highlight">Crying Raining</span> or quality gear and studio support from
+      <span class="highlight">33 Studio</span>, we’re here to make your sound come alive! 🎶💙
     </footer>
-  </main>
+  </div>
 </body>
 </html>
