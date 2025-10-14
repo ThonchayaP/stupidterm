@@ -20,7 +20,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      min-height: 200vh; /* เพื่อให้เลื่อนจอได้ */
+      min-height: 200vh;
       overflow-x: hidden;
       position: relative;
     }
@@ -107,45 +107,55 @@
       99% { opacity: 0.95; }
     }
 
-    /* Cartoon cloud character */
+    /* Cartoon cloud */
     .cloud {
       position: absolute;
       top: 40px;
       right: -60px;
       width: 80px;
       height: 50px;
-      background: #e0d6c6;
+      background: #dfd7c9;
       border: 2px solid #5b4c3c;
       border-radius: 40px;
-      box-shadow: -20px 10px 0 -5px #e0d6c6, 20px 10px 0 -5px #e0d6c6;
-      animation: float 3s ease-in-out infinite;
+      box-shadow: -20px 10px 0 -5px #dfd7c9, 20px 10px 0 -5px #dfd7c9;
+      animation: float 4s ease-in-out infinite;
     }
 
-    .cloud::after {
-      content: "⚡";
+    /* raindrops */
+    .drop {
       position: absolute;
-      bottom: -18px;
+      bottom: -10px;
       left: 35%;
-      font-size: 1.5rem;
-      color: #d6a736;
-      animation: flash 2s infinite;
+      width: 6px;
+      height: 10px;
+      background: #8b7b6b;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: rain 2.5s infinite ease-in-out;
     }
+    .drop:nth-child(2) { left: 50%; animation-delay: 0.8s; }
+    .drop:nth-child(3) { left: 65%; animation-delay: 1.5s; }
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
+      50% { transform: translateY(-8px); }
     }
 
-    @keyframes flash {
-      0%, 80%, 100% { opacity: 0; transform: translateY(0); }
-      81%, 90% { opacity: 1; transform: translateY(3px); }
+    @keyframes rain {
+      0% { opacity: 0; transform: translateY(0); }
+      20% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(15px); }
     }
 
   </style>
 </head>
 <body>
   <div class="container" id="card">
-    <div class="cloud"></div>
+    <div class="cloud">
+      <div class="drop"></div>
+      <div class="drop"></div>
+      <div class="drop"></div>
+    </div>
 
     <h1>Contact Us</h1>
 
@@ -173,12 +183,11 @@
   </div>
 
   <script>
-    // Parallax motion effect on scroll
+    // Parallax vertical motion only (no rotation)
     const card = document.getElementById("card");
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      // ขยับเบา ๆ ตามการเลื่อน
-      card.style.transform = `translateY(${scrollY * 0.2}px) rotate(${scrollY * 0.02}deg)`;
+      card.style.transform = `translateY(${scrollY * 0.15}px)`;
     });
   </script>
 </body>
