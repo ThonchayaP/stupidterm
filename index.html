@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Crying Raining x 33 Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <title>Contact | Crying Raining</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-top: #e7dfd3;
+      --bg-bottom: #d7c7b3;
+      --text-main: #2e2a27;
+      --accent: #6a4c2a;
+      --card-bg: rgba(255, 255, 255, 0.65);
+      --border: rgba(60, 50, 40, 0.25);
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,24 +22,26 @@
     }
 
     body {
-      font-family: "Manrope", sans-serif;
-      background: linear-gradient(180deg, #e7dfd3, #d7c7b3);
-      color: #2e2a27;
+      font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+      color: var(--text-main);
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      min-height: 200vh;
+      min-height: 100vh;
       overflow-x: hidden;
       position: relative;
+      -webkit-font-smoothing: antialiased;
+      padding: 20px;
     }
 
-    /* noise texture */
+    /* Noise texture overlay */
     body::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: url('https://www.transparenttextures.com/patterns/cream-pixels.png');
+      background: url("https://www.transparenttextures.com/patterns/cream-pixels.png");
       opacity: 0.25;
       z-index: 0;
     }
@@ -38,90 +49,66 @@
     .container {
       position: relative;
       z-index: 2;
-      background: rgba(255, 255, 255, 0.65);
-      backdrop-filter: blur(10px);
-      border-radius: 14px;
-      border: 1.5px solid rgba(60, 50, 40, 0.3);
-      padding: 50px 60px;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      padding: 40px 32px;
+      width: 100%;
+      max-width: 420px;
       text-align: center;
-      width: 90%;
-      max-width: 580px;
-      box-shadow: 0 8px 25px rgba(60, 40, 20, 0.15);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease-out;
     }
 
     h1 {
-      font-family: "Space Mono", monospace;
-      font-size: 1.8rem;
-      color: #2b1d15;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-bottom: 2px dashed rgba(60, 40, 20, 0.3);
-      display: inline-block;
-      padding-bottom: 8px;
+      font-size: 1.6rem;
+      color: var(--text-main);
+      letter-spacing: 0.5px;
       margin-bottom: 1.2em;
-      text-shadow: 1px 1px 0 #d2b48c;
+      text-transform: uppercase;
     }
 
     p {
       font-size: 1rem;
-      line-height: 1.8;
+      line-height: 1.6;
+      margin: 1.2em 0;
       color: #3b322c;
-      margin: 1em 0;
     }
 
     a {
-      color: #6a4c2a;
+      color: var(--accent);
       font-weight: 600;
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
+      word-break: break-all;
     }
 
     a:hover {
-      border-bottom: 1px solid #6a4c2a;
+      border-bottom: 1px solid var(--accent);
       color: #2e2a27;
     }
 
     .emoji {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-right: 6px;
     }
 
-    footer {
-      font-family: "Space Mono", monospace;
-      font-size: 0.95rem;
-      color: #4a3b2f;
-      margin-top: 2.2em;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      border-top: 1px dashed rgba(80, 60, 40, 0.4);
-      padding-top: 1em;
-      animation: flicker 3s infinite ease-in-out;
-    }
-
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      97% { opacity: 0.85; }
-      98% { opacity: 0.6; }
-      99% { opacity: 0.95; }
-    }
-
-    /* Cartoon cloud */
+    /* Cloud animation */
     .cloud {
       position: absolute;
-      top: 40px;
-      right: -60px;
-      width: 80px;
-      height: 50px;
-      background: #dfd7c9;
+      top: -50px;
+      right: 30px;
+      width: 70px;
+      height: 40px;
+      background: #e5d9ca;
       border: 2px solid #5b4c3c;
       border-radius: 40px;
-      box-shadow: -20px 10px 0 -5px #dfd7c9, 20px 10px 0 -5px #dfd7c9;
+      box-shadow: -20px 8px 0 -5px #e5d9ca, 20px 8px 0 -5px #e5d9ca;
       animation: float 4s ease-in-out infinite;
     }
 
-    /* raindrops */
     .drop {
       position: absolute;
       bottom: -10px;
@@ -134,7 +121,7 @@
       animation: rain 2.5s infinite ease-in-out;
     }
     .drop:nth-child(2) { left: 50%; animation-delay: 0.8s; }
-    .drop:nth-child(3) { left: 65%; animation-delay: 1.5s; }
+    .drop:nth-child(3) { left: 65%; animation-delay: 1.4s; }
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
@@ -147,6 +134,30 @@
       100% { opacity: 0; transform: translateY(15px); }
     }
 
+    /* Smooth motion on scroll */
+    @media (prefers-reduced-motion: no-preference) {
+      #card {
+        transition: transform 0.3s ease-out;
+      }
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+      p {
+        font-size: 0.95rem;
+      }
+      .container {
+        padding: 36px 24px;
+      }
+      .cloud {
+        right: 15px;
+        width: 60px;
+        height: 35px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -161,33 +172,29 @@
 
     <p>
       <span class="emoji">📩</span>
-      <strong>Contact me:</strong><br />
+      <strong>Email:</strong><br />
       <a href="mailto:thonchaya@outlook.com">thonchaya@outlook.com</a>
     </p>
 
     <p>
       <span class="emoji">🎸</span>
-      <strong>Contact Crying Raining:</strong><br />
-      <a href="https://linktr.ee/cryingraining" target="_blank">https://linktr.ee/cryingraining</a>
+      <strong>Crying Raining:</strong><br />
+      <a href="https://linktr.ee/cryingraining" target="_blank">linktr.ee/cryingraining</a>
     </p>
 
     <p>
       <span class="emoji">🎧</span>
-      <strong>Contact 33 Studio:</strong><br />
-      <a href="https://linktr.ee/33studio.bkk" target="_blank">https://linktr.ee/33studio.bkk</a>
+      <strong>33 Studio:</strong><br />
+      <a href="https://linktr.ee/33studio.bkk" target="_blank">linktr.ee/33studio.bkk</a>
     </p>
-
-    <footer>
-      Crying Raining × 33 Studio
-    </footer>
   </div>
 
   <script>
-    // Parallax vertical motion only (no rotation)
+    // Parallax vertical scroll
     const card = document.getElementById("card");
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      card.style.transform = `translateY(${scrollY * 0.15}px)`;
+      card.style.transform = `translateY(${scrollY * 0.1}px)`;
     });
   </script>
 </body>
