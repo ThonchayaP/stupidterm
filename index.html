@@ -1,131 +1,113 @@
-<html>
-  <head>
-    <title>ChatGPT Data Export</title>
-    <style>
-      body {
-        margin: 20px;
-      }
-      h4 {
-        font-family: sans-serif;
-        margin: 0;
-      }
-      #root {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-      .conversation {
-        border: 1px solid black;
-        padding: 20px;
-        background-color: #f3f3f3;
-      }
-      .message {
-        white-space: pre-wrap;
-        margin: 20px 0;
-      }
-      .author {
-        font-weight: bold;
-        margin-bottom: 4px;
-      }
-      .author::first-letter {
-        text-transform: uppercase;
-      }
-    </style>
-    <script>
-      var jsonData = [{"title": "Basic Linux commands", "create_time": 1760430095.222903, "update_time": 1760430578.85691, "mapping": {"client-created-root": {"id": "client-created-root", "message": null, "parent": null, "children": ["95f396c3-8555-41a4-a80e-f92ff5bafdee"]}, "95f396c3-8555-41a4-a80e-f92ff5bafdee": {"id": "95f396c3-8555-41a4-a80e-f92ff5bafdee", "message": {"id": "95f396c3-8555-41a4-a80e-f92ff5bafdee", "author": {"role": "system", "name": null, "metadata": {}}, "create_time": null, "update_time": null, "content": {"content_type": "text", "parts": [""]}, "status": "finished_successfully", "end_turn": true, "weight": 0.0, "metadata": {"is_visually_hidden_from_conversation": true}, "recipient": "all", "channel": null}, "parent": "client-created-root", "children": ["a9f3e387-5954-401c-a3f1-eb090a58a4e9"]}, "a9f3e387-5954-401c-a3f1-eb090a58a4e9": {"id": "a9f3e387-5954-401c-a3f1-eb090a58a4e9", "message": {"id": "a9f3e387-5954-401c-a3f1-eb090a58a4e9", "author": {"role": "user", "name": null, "metadata": {}}, "create_time": 1760430094.833, "update_time": null, "content": {"content_type": "text", "parts": ["basic linux command"]}, "status": "finished_successfully", "end_turn": null, "weight": 1.0, "metadata": {"selected_github_repos": [], "serialization_metadata": {"custom_symbol_offsets": []}, "request_id": "98e5a9fd4a89732e-BKK", "message_source": null, "turn_exchange_id": "c7ed36b8-45a4-48af-b694-b31cee6e6703", "timestamp_": "absolute"}, "recipient": "all", "channel": null}, "parent": "95f396c3-8555-41a4-a80e-f92ff5bafdee", "children": ["7f7d2e8b-3262-4998-9d52-45ab0a365cb3"]}, "7f7d2e8b-3262-4998-9d52-45ab0a365cb3": {"id": "7f7d2e8b-3262-4998-9d52-45ab0a365cb3", "message": {"id": "7f7d2e8b-3262-4998-9d52-45ab0a365cb3", "author": {"role": "assistant", "name": null, "metadata": {}}, "create_time": 1760430095.1479394, "update_time": null, "content": {"content_type": "text", "parts": [""]}, "status": "finished_successfully", "end_turn": null, "weight": 1.0, "metadata": {"request_id": "98e5a9fd4a89732e-BKK", "message_type": "next", "model_slug": "gpt-5-mini", "default_model_slug": "auto", "parent_id": "a9f3e387-5954-401c-a3f1-eb090a58a4e9", "turn_exchange_id": "c7ed36b8-45a4-48af-b694-b31cee6e6703", "timestamp_": "absolute"}, "recipient": "all", "channel": null}, "parent": "a9f3e387-5954-401c-a3f1-eb090a58a4e9", "children": ["1de2f30f-5a48-4c43-853e-a77bef4aacc3"]}, "1de2f30f-5a48-4c43-853e-a77bef4aacc3": {"id": "1de2f30f-5a48-4c43-853e-a77bef4aacc3", "message": {"id": "1de2f30f-5a48-4c43-853e-a77bef4aacc3", "author": {"role": "assistant", "name": null, "metadata": {}}, "create_time": 1760430095.163301, "update_time": 1760430109.055575, "content": {"content_type": "text", "parts": ["Sure! Here&#x27;s a concise list of **basic Linux commands** with explanations:  \n\n---\n\n### **File and Directory Commands**\n| Command | Description | Example |\n|---------|------------|---------|\n| `pwd` | Print the current working directory | `pwd` \u2192 `/home/user` |\n| `ls` | List files and directories | `ls -l` (detailed list) |\n| `cd` | Change directory | `cd /var/log` |\n| `mkdir` | Create a new directory | `mkdir new_folder` |\n| `rmdir` | Remove an empty directory | `rmdir old_folder` |\n| `rm -r` | Remove a directory and its contents | `rm -r old_folder` |\n| `touch` | Create an empty file | `touch file.txt` |\n| `cp` | Copy files or directories | `cp file.txt /home/user/backup/` |\n| `mv` | Move or rename files/directories | `mv old.txt new.txt` |\n\n---\n\n### **File Viewing &amp; Editing**\n| Command | Description | Example |\n|---------|------------|---------|\n| `cat` | Display file contents | `cat file.txt` |\n| `less` | View file contents page by page | `less file.txt` |\n| `head` | Show first 10 lines | `head file.txt` |\n| `tail` | Show last 10 lines | `tail file.txt` |\n| `nano` | Text editor | `nano file.txt` |\n| `vim` | Advanced text editor | `vim file.txt` |\n\n---\n\n### **File Permissions**\n| Command | Description | Example |\n|---------|------------|---------|\n| `chmod` | Change file permissions | `chmod 755 script.sh` |\n| `chown` | Change file owner | `chown user:group file.txt` |\n| `ls -l` | View file permissions | `ls -l file.txt` |\n\n---\n\n### **System &amp; Process Commands**\n| Command | Description | Example |\n|---------|------------|---------|\n| `whoami` | Show current user | `whoami` |\n| `uptime` | Show system uptime | `uptime` |\n| `top` | Show running processes | `top` |\n| `ps` | Show processes | `ps aux` |\n| `kill` | Terminate a process | `kill 1234` |\n| `df` | Show disk usage | `df -h` |\n| `du` | Show directory size | `du -sh /home/user` |\n\n---\n\n### **Networking**\n| Command | Description | Example |\n|---------|------------|---------|\n| `ping` | Check network connectivity | `ping google.com` |\n| `ifconfig` / `ip a` | Show network interfaces | `ip a` |\n| `curl` | Fetch a URL | `curl http://example.com` |\n| `wget` | Download files | `wget http://example.com/file.zip` |\n\n---\n\n### **Package Management (Debian/Ubuntu)**\n| Command | Description | Example |\n|---------|------------|---------|\n| `apt update` | Update package list | `sudo apt update` |\n| `apt upgrade` | Upgrade installed packages | `sudo apt upgrade` |\n| `apt install` | Install a package | `sudo apt install nginx` |\n| `apt remove` | Remove a package | `sudo apt remove nginx` |\n\n---\n\nIf you want, I can make a **super short cheat sheet of 20 commands you\u2019ll actually use every day**, which is easier to memorize and super practical for Linux beginners.  \n\nDo you want me to do that?"]}, "status": "finished_successfully", "end_turn": true, "weight": 1.0, "metadata": {"finish_details": {"type": "stop", "stop_tokens": [200002]}, "is_complete": true, "citations": [], "content_references": [], "request_id": "98e5a9fd4a89732e-BKK", "message_type": "next", "model_slug": "gpt-5-mini", "default_model_slug": "auto", "parent_id": "7f7d2e8b-3262-4998-9d52-45ab0a365cb3", "turn_exchange_id": "c7ed36b8-45a4-48af-b694-b31cee6e6703", "timestamp_": "absolute"}, "recipient": "all", "channel": null}, "parent": "7f7d2e8b-3262-4998-9d52-45ab0a365cb3", "children": []}}, "moderation_results": [], "current_node": "1de2f30f-5a48-4c43-853e-a77bef4aacc3", "plugin_ids": null, "conversation_id": "68ee080a-f3dc-8324-8551-222c861f9e63", "conversation_template_id": null, "gizmo_id": null, "gizmo_type": null, "is_archived": false, "is_starred": null, "safe_urls": [], "blocked_urls": [], "default_model_slug": "auto", "conversation_origin": null, "voice": null, "async_status": null, "disabled_tool_ids": [], "is_do_not_remember": false, "memory_scope": "global_enabled", "context_scopes": null, "sugar_item_id": null, "sugar_item_visible": false, "is_study_mode": false, "owner": null, "id": "68ee080a-f3dc-8324-8551-222c861f9e63"}]
-      var assetsJson = null
-
-
-      function getConversationMessages(conversation) {
-          var messages = [];
-          var currentNode = conversation.current_node;
-          while (currentNode != null) {
-              var node = conversation.mapping[currentNode];
-              if (
-                  node.message &&
-                  node.message.content &&
-                  node.message.content.parts &&
-                  node.message.content.parts.length > 0 &&
-                  (node.message.author.role !== "system"  || node.message.metadata.is_user_system_message)
-              ) {
-                  author = node.message.author.role;
-                  if (author === "assistant" || author === "tool") {
-                      author = "ChatGPT";
-                  } else if (author === "system" && node.message.metadata.is_user_system_message) {
-                      author = "Custom user info"
-                  }
-                  if (node.message.content.content_type == "text" || node.message.content.content_type == "multimodal_text") {
-                    var parts = [];
-                    for (var i = 0; i < node.message.content.parts.length; i++) {
-                      var part = node.message.content.parts[i];
-                      if (typeof part === "string" && part.length > 0) {
-                        parts.push({text: part});
-                      } else if (part.content_type == "audio_transcription") {
-                        parts.push({transcript: part.text});
-                      } else if (part.content_type == "audio_asset_pointer" || part.content_type == "image_asset_pointer" || part.content_type == "video_container_asset_pointer") {
-                        parts.push({asset: part});
-                      } else if (part.content_type == "real_time_user_audio_video_asset_pointer") {
-                        if (part.audio_asset_pointer) {
-                          parts.push({asset: part.audio_asset_pointer});
-                        }
-                        if (part.video_container_asset_pointer) {
-                          parts.push({asset: part.video_container_asset_pointer});
-                        }
-                        for (var j = 0; j < part.frames_asset_pointers.length; j++) {
-                          parts.push({asset: part.frames_asset_pointers[j]});
-                        }
-                      }
-                    }
-                    if (parts.length > 0) {
-                      messages.push({ author, parts: parts });
-                    }
-                  }
-              }
-              currentNode = node.parent;
-          }
-          return messages.reverse();
-      }
-
-      // on load, add messages to the root div
-      window.onload = function() {
-          var root = document.getElementById("root");
-          for (var i = 0; i < jsonData.length; i++) {
-              var conversation = jsonData[i];
-              var messages = getConversationMessages(conversation);
-              var div = document.createElement("div");
-              div.className = "conversation";
-              div.innerHTML = "<h4>" + conversation.title + "</h4>";
-              for (var j = 0; j < messages.length; j++) {
-                  var message = document.createElement("pre");
-                  message.className = "message";
-                  message.innerHTML = `<div class="author">${messages[j].author}</div>`
-                  if (messages[j].parts) {
-                    for (var k = 0; k < messages[j].parts.length; k++) {
-                      var part = messages[j].parts[k];
-                      if (part.text) {
-                        message.innerHTML += `<div>${part.text}</div>`;
-                      } else if (assetsJson) {
-                        if (part.transcript) {
-                          message.innerHTML += `<div>[Transcript]: ${part.transcript}</div>`;
-                        } else if (part.asset) {
-                          var link = assetsJson[part.asset.asset_pointer];
-                          if (link) {
-                            message.innerHTML += `<div>[File]: <a href="${link}">${link}</a></div>`;
-                          } else {
-                            message.innerHTML += `<div>[File]: -Deleted-</div>`;
-                          }
-                        }
-                      }
-                    }
-                  }
-                  div.appendChild(message);
-              }
-              root.appendChild(div);
-          }
-      }
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Crying Raining & 33 Studio</title>
+  <style>
+    :root{
+      --bg:#fff8ff;
+      --card:#fff;
+      --accent:#ff6fa3;
+      --muted:#666;
+      --radius:12px;
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body{
+      margin:0;
+      padding:32px;
+      background: linear-gradient(180deg,#fff8ff 0%, #fff 60%);
+      color:#222;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+    }
+    .card{
+      width:100%;
+      max-width:640px;
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      padding:28px;
+    }
+    h1{ margin:0 0 6px 0; font-size:1.5rem; }
+    p.lead{ margin:0 0 18px 0; color:var(--muted); }
+    .contact-list{ list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+    .item{
+      display:flex;
+      gap:12px;
+      align-items:start;
+      padding:12px;
+      border-radius:10px;
+      background: linear-gradient(180deg, rgba(255,111,159,0.06), rgba(255,255,255,0));
+      transition: transform .12s ease;
+    }
+    .item:hover{ transform: translateY(-4px); }
+    .emoji{
+      font-size:1.6rem;
+      line-height:1;
+      margin-top:2px;
+    }
+    .meta{
+      display:flex;
+      flex-direction:column;
+    }
+    a{
+      color:var(--accent);
+      text-decoration:none;
+      word-break:break-all;
+    }
+    .small{ color:var(--muted); font-size:0.95rem; margin-top:6px; }
+    footer{ margin-top:18px; color:var(--muted); font-size:0.9rem; text-align:center; }
+    @media (max-width:420px){
+      body{ padding:18px; }
+      .card{ padding:18px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <header>
+      <h1 id="title">ติดต่อ / Contact :love_letter:</h1>
+      <p class="lead">ติดต่อฉันและทีมงาน — ส่งข้อความมาได้เลยนะจ๊ะ :sparkles:</p>
+    </header>
+    <ul class="contact-list" role="list">
+      <li class="item" role="listitem">
+        <div class="emoji">:envelope_with_arrow:</div>
+        <div class="meta">
+          <strong>ติดต่อฉัน / Contact Me</strong>
+          <div class="small">
+            <a href="mailto:thonchaya@outlook.com">thonchaya@outlook.com</a>
+          </div>
+        </div>
+      </li>
+      <li class="item" role="listitem">
+        <div class="emoji">:musical_note:</div>
+        <div class="meta">
+          <strong>ติดต่อ Crying Raining / Contact Crying Raining</strong>
+          <div class="small">
+            <a href="https://linktr.ee/cryingraining?fbclid=PAVERFWANa_klleHRuA2FlbQIxMQABp569W2kidAsYd1uzE_tS8XfgOyjeKx_IU0Q__M4QIJC0ymIPUUEtuHfdbcHb_aem_wHwDGa0g1kMJAxvPPHj5rQ" target="_blank" rel="noopener noreferrer">
+              https://linktr.ee/cryingraining?fbclid=PAVERFWANa_klleHRuA2FlbQIxMQABp569W2kidAsYd1uzE_tS8XfgOyjeKx_IU0Q__M4QIJC0ymIPUUEtuHfdbcHb_aem_wHwDGa0g1kMJAxvPPHj5rQ
+            </a>
+          </div>
+        </div>
+      </li>
+      <li class="item" role="listitem">
+        <div class="emoji">:headphones:</div>
+        <div class="meta">
+          <strong>ติดต่อ 33 Studio / Contact 33 Studio</strong>
+          <div class="small">
+            <a href="https://linktr.ee/33studio.bkk?fbclid=PAZnRzaANa_1JleHRuA2FlbQIxMQABp_E56bpcqaW5UQsgVwqLwnz-rQgWDbyWyMxnX4fwF6A4Kd7W6SS1YWxNvhsA_aem_DsSRZfYIMxTHfs_q2gWddA" target="_blank" rel="noopener noreferrer">
+              https://linktr.ee/33studio.bkk?fbclid=PAZnRzaANa_1JleHRuA2FlbQIxMQABp_E56bpcqaW5UQsgVwqLwnz-rQgWDbyWyMxnX4fwF6A4Kd7W6SS1YWxNvhsA_aem_DsSRZfYIMxTHfs_q2gWddA
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <footer>
+      ขอบคุณที่ติดต่อนะคะ/ครับ :two_hearts: — Crying Raining
+    </footer>
+  </main>
+</body>
 </html>
