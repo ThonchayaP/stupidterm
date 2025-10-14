@@ -36,7 +36,7 @@
       padding: 20px;
     }
 
-    /* Noise texture overlay */
+    /* subtle texture overlay */
     body::before {
       content: "";
       position: absolute;
@@ -67,6 +67,16 @@
       letter-spacing: 0.5px;
       margin-bottom: 1.2em;
       text-transform: uppercase;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
     }
 
     p {
@@ -95,53 +105,14 @@
       margin-right: 6px;
     }
 
-    /* Cloud animation */
-    .cloud {
-      position: absolute;
-      top: -50px;
-      right: 30px;
-      width: 70px;
-      height: 40px;
-      background: #e5d9ca;
-      border: 2px solid #5b4c3c;
-      border-radius: 40px;
-      box-shadow: -20px 8px 0 -5px #e5d9ca, 20px 8px 0 -5px #e5d9ca;
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .drop {
-      position: absolute;
-      bottom: -10px;
-      left: 35%;
-      width: 6px;
-      height: 10px;
-      background: #8b7b6b;
-      border-radius: 50%;
-      opacity: 0.7;
-      animation: rain 2.5s infinite ease-in-out;
-    }
-    .drop:nth-child(2) { left: 50%; animation-delay: 0.8s; }
-    .drop:nth-child(3) { left: 65%; animation-delay: 1.4s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-
-    @keyframes rain {
-      0% { opacity: 0; transform: translateY(0); }
-      20% { opacity: 1; }
-      100% { opacity: 0; transform: translateY(15px); }
-    }
-
-    /* Smooth motion on scroll */
+    /* gentle scroll parallax for card */
     @media (prefers-reduced-motion: no-preference) {
       #card {
         transition: transform 0.3s ease-out;
       }
     }
 
-    /* Mobile optimization */
+    /* iPhone / mobile optimization */
     @media (max-width: 480px) {
       h1 {
         font-size: 1.4rem;
@@ -152,22 +123,11 @@
       .container {
         padding: 36px 24px;
       }
-      .cloud {
-        right: 15px;
-        width: 60px;
-        height: 35px;
-      }
     }
   </style>
 </head>
 <body>
   <div class="container" id="card">
-    <div class="cloud">
-      <div class="drop"></div>
-      <div class="drop"></div>
-      <div class="drop"></div>
-    </div>
-
     <h1>Contact Us</h1>
 
     <p>
@@ -190,7 +150,7 @@
   </div>
 
   <script>
-    // Parallax vertical scroll
+    // smooth parallax scroll for the container
     const card = document.getElementById("card");
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
