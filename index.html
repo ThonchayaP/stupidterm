@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Crying Raining</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-top: #e7dfd3;
-      --bg-bottom: #d7c7b3;
-      --text-main: #2e2a27;
-      --accent: #6a4c2a;
-      --card-bg: rgba(255, 255, 255, 0.65);
-      --border: rgba(60, 50, 40, 0.25);
+      --bg: #f5f5f7;
+      --text-main: #1c1c1e;
+      --accent: #0071e3;
+      --card-bg: rgba(255, 255, 255, 0.85);
+      --shadow: rgba(0, 0, 0, 0.08);
+      --border-radius: 20px;
     }
 
     * {
@@ -22,106 +22,80 @@
     }
 
     body {
-      font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
       color: var(--text-main);
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-      -webkit-font-smoothing: antialiased;
       padding: 20px;
-    }
-
-    /* subtle texture overlay */
-    body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("https://www.transparenttextures.com/patterns/cream-pixels.png");
-      opacity: 0.25;
-      z-index: 0;
+      line-height: 1.6;
     }
 
     .container {
-      position: relative;
-      z-index: 2;
       background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      padding: 40px 32px;
+      backdrop-filter: blur(20px);
+      border-radius: var(--border-radius);
+      box-shadow: 0 12px 30px var(--shadow);
+      padding: 50px 40px;
+      max-width: 480px;
       width: 100%;
-      max-width: 420px;
       text-align: center;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-out;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-6px);
     }
 
     h1 {
-      font-size: 1.6rem;
-      color: var(--text-main);
-      letter-spacing: 0.5px;
-      margin-bottom: 1.2em;
-      text-transform: uppercase;
-      animation: float 5s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-5px);
-      }
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
     }
 
     p {
       font-size: 1rem;
-      line-height: 1.6;
-      margin: 1.2em 0;
-      color: #3b322c;
+      margin-bottom: 1.8rem;
+      color: #333;
     }
 
     a {
       color: var(--accent);
-      font-weight: 600;
       text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: all 0.25s ease;
-      word-break: break-all;
+      font-weight: 600;
+      transition: color 0.25s ease, text-decoration 0.25s ease;
     }
 
     a:hover {
-      border-bottom: 1px solid var(--accent);
-      color: #2e2a27;
+      color: #005bb5;
+      text-decoration: underline;
     }
 
     .emoji {
       font-size: 1.2rem;
-      margin-right: 6px;
+      margin-right: 8px;
     }
 
-    /* gentle scroll parallax for card */
+    /* Smooth parallax effect */
     @media (prefers-reduced-motion: no-preference) {
       #card {
         transition: transform 0.3s ease-out;
       }
     }
 
-    /* iPhone / mobile optimization */
+    /* Mobile adjustments */
     @media (max-width: 480px) {
+      .container {
+        padding: 36px 24px;
+      }
       h1 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
       }
       p {
         font-size: 0.95rem;
-      }
-      .container {
-        padding: 36px 24px;
       }
     }
   </style>
@@ -150,11 +124,10 @@
   </div>
 
   <script>
-    // smooth parallax scroll for the container
     const card = document.getElementById("card");
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
-      card.style.transform = `translateY(${scrollY * 0.1}px)`;
+      card.style.transform = `translateY(${scrollY * 0.05}px)`;
     });
   </script>
 </body>
