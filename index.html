@@ -1,77 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Crying Raining</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f5f5f7;
-      --text-main: #1c1c1e;
-      --accent: #0071e3;
-      --card-bg: rgba(255, 255, 255, 0.85);
-      --shadow: rgba(0, 0, 0, 0.08);
-      --border-radius: 20px;
+      --bg-color: #f5f5f7;
+      --card-bg: #ffffff;
+      --text-color: #1d1d1f;
+      --link-color: #0071e3;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --border-radius: 16px;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
+      font-family: 'Manrope', sans-serif;
+      background-color: var(--bg-color);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
-      line-height: 1.6;
+      color: var(--text-color);
     }
 
     .container {
-      background: var(--card-bg);
-      backdrop-filter: blur(20px);
+      background-color: var(--card-bg);
       border-radius: var(--border-radius);
-      box-shadow: 0 12px 30px var(--shadow);
-      padding: 50px 40px;
-      max-width: 480px;
+      box-shadow: 0 4px 12px var(--shadow-color);
+      padding: 40px;
       width: 100%;
+      max-width: 480px;
       text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .container:hover {
-      transform: translateY(-6px);
+      backdrop-filter: blur(20px);
     }
 
     h1 {
-      font-weight: 700;
       font-size: 2rem;
-      margin-bottom: 2rem;
-      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
     }
 
     p {
       font-size: 1rem;
-      margin-bottom: 1.8rem;
-      color: #333;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
     }
 
     a {
-      color: var(--accent);
+      color: var(--link-color);
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.25s ease, text-decoration 0.25s ease;
+      transition: color 0.3s ease;
     }
 
     a:hover {
       color: #005bb5;
-      text-decoration: underline;
     }
 
     .emoji {
@@ -79,21 +72,15 @@
       margin-right: 8px;
     }
 
-    /* Smooth parallax effect */
-    @media (prefers-reduced-motion: no-preference) {
-      #card {
-        transition: transform 0.3s ease-out;
-      }
-    }
-
-    /* Mobile adjustments */
     @media (max-width: 480px) {
       .container {
-        padding: 36px 24px;
+        padding: 30px;
       }
+
       h1 {
         font-size: 1.6rem;
       }
+
       p {
         font-size: 0.95rem;
       }
@@ -101,34 +88,23 @@
   </style>
 </head>
 <body>
-  <div class="container" id="card">
-    <h1>Contact Us</h1>
-
+  <div class="container">
+    <h1>ติดต่อเรา</h1>
     <p>
       <span class="emoji">📩</span>
-      <strong>Email:</strong><br />
+      <strong>อีเมล:</strong><br>
       <a href="mailto:thonchaya@outlook.com">thonchaya@outlook.com</a>
     </p>
-
     <p>
       <span class="emoji">🎸</span>
-      <strong>Crying Raining:</strong><br />
+      <strong>Crying Raining:</strong><br>
       <a href="https://linktr.ee/cryingraining" target="_blank">linktr.ee/cryingraining</a>
     </p>
-
     <p>
       <span class="emoji">🎧</span>
-      <strong>33 Studio:</strong><br />
+      <strong>33 Studio:</strong><br>
       <a href="https://linktr.ee/33studio.bkk" target="_blank">linktr.ee/33studio.bkk</a>
     </p>
   </div>
-
-  <script>
-    const card = document.getElementById("card");
-    window.addEventListener("scroll", () => {
-      const scrollY = window.scrollY;
-      card.style.transform = `translateY(${scrollY * 0.05}px)`;
-    });
-  </script>
 </body>
 </html>
