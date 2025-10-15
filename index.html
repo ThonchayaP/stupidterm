@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #f5f5f7;
-      --card-bg: #ffffff;
+      --bg: #f5f5f7;
       --text-color: #1d1d1f;
       --link-color: #0071e3;
-      --shadow-color: rgba(0, 0, 0, 0.1);
-      --border-radius: 16px;
+      --card-bg: rgba(255, 255, 255, 0.35); /* semi-transparent */
+      --card-border: rgba(0, 0, 0, 0.08);
+      --shadow-color: rgba(0, 0, 0, 0.15);
+      --border-radius: 20px;
     }
 
     * {
@@ -23,7 +24,7 @@
 
     body {
       font-family: 'Manrope', sans-serif;
-      background-color: var(--bg-color);
+      background: var(--bg);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -33,21 +34,27 @@
     }
 
     .container {
-      background-color: var(--card-bg);
+      background: var(--card-bg);
       border-radius: var(--border-radius);
-      box-shadow: 0 4px 12px var(--shadow-color);
-      padding: 40px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 12px 40px var(--shadow-color);
+      padding: 50px 40px;
       width: 100%;
       max-width: 480px;
       text-align: center;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-6px);
     }
 
     h1 {
       font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: var(--text-color);
+      margin-bottom: 2rem;
     }
 
     p {
@@ -67,14 +74,9 @@
       color: #005bb5;
     }
 
-    .emoji {
-      font-size: 1.2rem;
-      margin-right: 8px;
-    }
-
     @media (max-width: 480px) {
       .container {
-        padding: 30px;
+        padding: 36px 24px;
       }
 
       h1 {
@@ -89,19 +91,16 @@
 </head>
 <body>
   <div class="container">
-    <h1>ติดต่อเรา</h1>
+    <h1>Contact Us</h1>
     <p>
-      <span class="emoji">📩</span>
-      <strong>อีเมล:</strong><br>
+      <strong>Email:</strong><br>
       <a href="mailto:thonchaya@outlook.com">thonchaya@outlook.com</a>
     </p>
     <p>
-      <span class="emoji">🎸</span>
       <strong>Crying Raining:</strong><br>
       <a href="https://linktr.ee/cryingraining" target="_blank">linktr.ee/cryingraining</a>
     </p>
     <p>
-      <span class="emoji">🎧</span>
       <strong>33 Studio:</strong><br>
       <a href="https://linktr.ee/33studio.bkk" target="_blank">linktr.ee/33studio.bkk</a>
     </p>
